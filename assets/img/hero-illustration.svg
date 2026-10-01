@@ -1,0 +1,28 @@
+<!-- Decorative hero illustration (abstract: sun, hills, path). Safe to keep or replace. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" width="560" height="520">
+  <defs>
+    <clipPath id="c"><path d="M40 260a240 240 0 0 1 480 0v220a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40Z"/></clipPath>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#f0bd68" opacity=".35"/></pattern>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="560" height="520" fill="#2a5a46"/>
+    <rect width="560" height="520" fill="url(#dots)"/>
+    <g fill="none" stroke="#f0bd68" stroke-width="1.5" opacity=".35">
+      <circle cx="280" cy="250" r="150"/><circle cx="280" cy="250" r="190"/><circle cx="280" cy="250" r="230"/>
+    </g>
+    <circle cx="280" cy="250" r="105" fill="#e8a63f"/>
+    <circle cx="280" cy="250" r="105" fill="none" stroke="#f8ebd2" stroke-width="2" opacity=".6"/>
+    <path d="M0 330c90-60 170-80 260-60s170 10 300-50v300H0Z" fill="#d0714b"/>
+    <path d="M0 380c110-40 200-40 300-10s170 20 260-20v170H0Z" fill="#a5482a"/>
+    <path d="M0 430c120-30 220-20 320 5s160 15 240-5v90H0Z" fill="#163a2c"/>
+    <path d="M90 500c40-30 90-40 150-55s110-40 150-80" fill="none" stroke="#fbf7f0" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 12" opacity=".9"/>
+    <circle cx="90" cy="500" r="7" fill="#fbf7f0"/>
+    <circle cx="240" cy="445" r="7" fill="#fbf7f0"/>
+    <circle cx="390" cy="365" r="9" fill="#f8ebd2" stroke="#163a2c" stroke-width="3"/>
+    <g fill="#e4ede6" opacity=".9">
+      <path d="M430 300c0-26 14-44 40-48 0 26-14 44-40 48Z"/>
+      <path d="M455 312c4-22 20-34 42-32-4 22-20 34-42 32Z" opacity=".75"/>
+    </g>
+  </g>
+  <path d="M40 260a240 240 0 0 1 480 0v220a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40Z" fill="none" stroke="#f0bd68" stroke-width="2" opacity=".5"/>
+</svg>

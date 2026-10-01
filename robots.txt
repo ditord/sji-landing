@@ -1,0 +1,6 @@
+# TODO(domain): replace www.example.org with the real domain
+User-agent: *
+Allow: /
+Disallow: /contact.php
+
+Sitemap: https://www.example.org/sitemap.xml

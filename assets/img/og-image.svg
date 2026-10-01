@@ -1,0 +1,18 @@
+<!-- Source for og-image.png (1200x630). Re-export after changing: rsvg-convert -w 1200 -h 630 og-image.svg -o og-image.png -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#1d4535"/>
+  <circle cx="980" cy="300" r="170" fill="#e8a63f"/>
+  <g fill="none" stroke="#f0bd68" stroke-width="2" opacity=".35"><circle cx="980" cy="300" r="230"/><circle cx="980" cy="300" r="290"/></g>
+  <path d="M640 470c120-70 230-90 340-70s150 0 220-40v270H640Z" fill="#d0714b"/>
+  <path d="M600 540c140-40 260-40 380-10s160 10 220-10v110H600Z" fill="#a5482a"/>
+  <rect x="80" y="90" width="72" height="4" rx="2" fill="#f0bd68"/>
+  <text x="80" y="140" font-family="Noto Sans, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="3" fill="#f0bd68">ARMENIAN WOMEN-LED NON-PROFIT</text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="600" fill="#ffffff">
+    <tspan x="80" y="260">Social Justice</tspan>
+    <tspan x="80" y="350">Innovations</tspan>
+  </text>
+  <text font-family="Noto Sans, Arial, sans-serif" font-size="30" fill="#e4ede6">
+    <tspan x="80" y="440">Gender and green justice for</tspan>
+    <tspan x="80" y="482">dignity, inclusion and resilience.</tspan>
+  </text>
+</svg>
