@@ -1,18 +1,23 @@
-<!-- Source for og-image.png (1200x630). Re-export after changing: rsvg-convert -w 1200 -h 630 og-image.svg -o og-image.png -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <rect width="1200" height="630" fill="#1d4535"/>
-  <circle cx="980" cy="300" r="170" fill="#e8a63f"/>
-  <g fill="none" stroke="#f0bd68" stroke-width="2" opacity=".35"><circle cx="980" cy="300" r="230"/><circle cx="980" cy="300" r="290"/></g>
-  <path d="M640 470c120-70 230-90 340-70s150 0 220-40v270H640Z" fill="#d0714b"/>
-  <path d="M600 540c140-40 260-40 380-10s160 10 220-10v110H600Z" fill="#a5482a"/>
-  <rect x="80" y="90" width="72" height="4" rx="2" fill="#f0bd68"/>
-  <text x="80" y="140" font-family="Noto Sans, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="3" fill="#f0bd68">ARMENIAN WOMEN-LED NON-PROFIT</text>
-  <text font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="600" fill="#ffffff">
-    <tspan x="80" y="260">Social Justice</tspan>
-    <tspan x="80" y="350">Innovations</tspan>
+<!-- Source for og-image.png (1200x630). Uses logo.png from this folder.
+     Re-export after changing (run inside assets/img): rsvg-convert -w 1200 -h 630 og-image.svg -o og-image.png -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs><clipPath id="panel"><rect x="760" y="0" width="440" height="630"/></clipPath></defs>
+  <rect width="1200" height="630" fill="#fbfaf6"/>
+  <g clip-path="url(#panel)">
+    <rect x="760" y="0" width="440" height="630" fill="#4a206b"/>
+    <circle cx="980" cy="300" r="140" fill="#dee43c"/>
+    <g fill="none" stroke="#dee43c" stroke-width="2" opacity=".35"><circle cx="980" cy="300" r="195"/><circle cx="980" cy="300" r="250"/></g>
+    <path d="M760 470c100-60 190-80 280-60s110 0 160-30v250H760Z" fill="#9b76b7"/>
+    <path d="M760 540c110-35 210-35 300-10s100 10 140-5v105H760Z" fill="#aaa17c"/>
+  </g>
+  <image x="80" y="70" width="240" height="140" preserveAspectRatio="xMinYMid meet" href="logo.png" xlink:href="logo.png"/>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="600" fill="#4a206b">
+    <tspan x="80" y="320">Social Justice</tspan>
+    <tspan x="80" y="400">Innovations</tspan>
   </text>
-  <text font-family="Noto Sans, Arial, sans-serif" font-size="30" fill="#e4ede6">
-    <tspan x="80" y="440">Gender and green justice for</tspan>
-    <tspan x="80" y="482">dignity, inclusion and resilience.</tspan>
+  <rect x="80" y="440" width="72" height="4" rx="2" fill="#662d91"/>
+  <text font-family="Noto Sans, Arial, sans-serif" font-size="28" fill="#4d4a52">
+    <tspan x="80" y="500">An Armenian women-led non-profit for</tspan>
+    <tspan x="80" y="540">gender and green justice.</tspan>
   </text>
 </svg>

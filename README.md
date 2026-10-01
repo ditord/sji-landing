@@ -10,17 +10,21 @@ index.html              The page: all sections, meta/SEO tags, JSON-LD
 assets/css/style.css    All styles; design tokens (colors, type, spacing) at the top
 assets/js/i18n.js       EN + HY text dictionaries (every visible string)
 assets/js/main.js       Language switch, mobile nav, scroll reveal, form handling
-assets/img/             logo.svg, hero-illustration.svg, photo-placeholder.svg,
-                        og-image.svg/.png (social preview), apple-touch-icon.png
+assets/img/             sji-logo.png (official logo, master file), logo.png,
+                        hero-illustration.svg, photo-placeholder.svg,
+                        og-image.svg/.png (social preview), apple-touch-icon.png,
+                        icon-192.png, icon-512.png
 contact.php             OPTIONAL form handler (PHP mail()), config at the top
-favicon.svg / .png      Browser icons (copies of the placeholder logo)
+favicon.ico, favicon-32.png  Browser icons
+site.webmanifest        App name + icons for "Add to home screen"
+tools/make-icons.py     Regenerates logo.png and all icons from sji-logo.png (don't upload)
 robots.txt, sitemap.xml
 content/brief.md        Source copy. Reference only; don't upload it
 ```
 
 ## Deploying (Plesk)
 
-1. Upload everything except `content/` and `README.md` to `/httpdocs`.
+1. Upload everything except `content/`, `tools/` and `README.md` to `/httpdocs`.
 2. If you keep the contact form, edit the CONFIG block at the top of `contact.php` (see TODOs below) and make sure PHP mail is enabled for the domain.
 3. Replace `https://www.example.org/` with the real domain (see TODOs).
 
@@ -38,10 +42,12 @@ To preview locally: `php -S localhost:8000` in this folder, then open http://loc
 
 **Language behavior.** The page first uses the visitor's saved choice (`localStorage`, key `sji-lang`). If there is none, it uses Armenian for browsers set to Armenian and English for everything else. The switch also updates `<html lang>`, the page title and the meta description. There's only one URL, so search engines index the English version.
 
-**Colors and type.** Edit the CSS variables at the top of `style.css`. The palette is deep green (`--green-800`), terracotta (`--terracotta-600`), amber (`--amber-400`) and cream (`--cream-50`). The pairs used for text pass WCAG AA:
-terracotta-600 on cream ≈ 5.4:1, ink-600 on cream ≈ 7:1, white on green-800 ≈ 10:1, amber-400 on green-800 ≈ 4.9:1. If you change a color, check it again.
+**Colors and type.** Edit the CSS variables at the top of `style.css`. The palette comes from the logo: purple (`--purple-600` #662D91, with darker shades for the hero, dark sections and footer), yellow (`--lime-400` #DEE43C, the logo's yellow as it appears on white, used for primary buttons and accents on dark backgrounds), khaki (`--khaki-*`) and an off-white page (`--paper`). Never use the yellow as text on light backgrounds, because its contrast is too low there. The pairs used for text pass WCAG AA:
+purple-600 on paper ≈ 8.6:1, ink-600 on paper ≈ 8.3:1, khaki-700 on paper ≈ 7.4:1, white on purple-800 ≈ 12:1, lime-400 on purple-900 ≈ 10.8:1, purple-950 on lime-400 (button text) ≈ 12.9:1. If you change a color, check it again. The hero illustration and `og-image.svg` use the same colors, so update them too.
 
 **Fonts.** The fonts load from Google Fonts with `display=swap`: Fraunces for Latin headings, Noto Sans for body text, and Noto Sans Armenian / Noto Serif Armenian for Armenian. To self-host them instead, download the WOFF2 files (for example with google-webfonts-helper) into `assets/fonts/`. Then add `@font-face` rules with `font-display: swap` to the top of `style.css` and remove the three Google `<link>` tags from `index.html`. The font-family names in the CSS don't need to change.
+
+**Logo and icons.** The master file is `assets/img/sji-logo.png`. It has a transparent background, semi-transparent color blocks and black letters, so it is designed for white or light backgrounds. On dark areas, such as the footer, it sits on a white tile. If the logo changes, replace `sji-logo.png` and run `python3 tools/make-icons.py`, which needs Pillow. The script rebuilds `logo.png`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` and the manifest icons. Small favicons (16–48 px) use only the "sJi" part of the logo, because the full wordmark can't be read at that size. A vector (SVG) version of the logo would allow a sharper favicon and header logo, so ask the designer if one exists.
 
 **Images.** Replace the files in `assets/img/` and keep the same file names, or change the paths in `index.html`. If you edit `og-image.svg`, export it to PNG again: `rsvg-convert -w 1200 -h 630 assets/img/og-image.svg -o assets/img/og-image.png`. Social networks don't accept SVG for preview images.
 
@@ -56,9 +62,8 @@ Nothing below was invented. Each item is a placeholder waiting for real informat
 
 | What | Where |
 |---|---|
-| **Logo**: `logo.svg` is a placeholder mark (sun over hills) | `assets/img/logo.svg`; also regenerate `favicon.svg`, `favicon.png` and `apple-touch-icon.png` from the real logo |
 | **Photos**: the About section shows a labeled placeholder | `assets/img/photo-placeholder.svg`; also set `about.photoAlt` in `i18n.js` (EN + HY) to describe the real photo. Use only photos you have consent for |
-| **Email**: `info@example.org` | `index.html` (mailto link + JSON-LD `email`), `contact.php` (`to`, `from`) |
+| **Form sender address**: `no-reply@example.org` | `contact.php` (`from`): use an address on the site's own domain, not Gmail |
 | **Social links**: none yet | Commented-out block in the footer of `index.html`; also add the URLs to the JSON-LD as `"sameAs": [...]` |
 | **Domain**: `https://www.example.org/` | `index.html` (canonical, `og:url`, `og:image`, `twitter:image`, JSON-LD `url`/`logo`), `robots.txt`, `sitemap.xml` |
 | **Official Armenian name** of the organization | `brand.name` and the name in `hero.lede` / `about.p1` / `meta.title` in the `hy` block of `i18n.js` |

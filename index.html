@@ -9,7 +9,7 @@
        The English values below are what search engines and link previews see. -->
   <title>Social Justice Innovations (SJI) — Gender and green justice in Armenia</title>
   <meta name="description" content="SJI is an Armenian women-led non-profit advancing social justice, dignity, inclusion and resilience through gender and green mainstreaming.">
-  <meta name="theme-color" content="#1d4535">
+  <meta name="theme-color" content="#4a206b">
 
   <!-- TODO(domain): replace https://www.example.org/ everywhere in this file, sitemap.xml and robots.txt -->
   <link rel="canonical" href="https://www.example.org/">
@@ -33,9 +33,11 @@
   <meta name="twitter:description" content="An Armenian women-led non-profit advancing social justice, dignity, inclusion and resilience through gender and green mainstreaming.">
   <meta name="twitter:image" content="https://www.example.org/assets/img/og-image.png">
 
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+  <!-- Icons are generated from assets/img/sji-logo.png by tools/make-icons.py -->
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <!-- Fonts: Fraunces (Latin display) + Noto Sans / Noto Sans Armenian / Noto Serif Armenian.
        display=swap keeps text visible while fonts load. See README to self-host instead. -->
@@ -52,9 +54,9 @@
     "name": "Social Justice Innovations",
     "alternateName": "SJI",
     "url": "https://www.example.org/",
-    "logo": "https://www.example.org/assets/img/logo.svg",
+    "logo": "https://www.example.org/assets/img/logo.png",
     "description": "An Armenian women-led non-profit public organization advancing social justice, dignity, inclusion and resilience through gender and green mainstreaming.",
-    "email": "info@example.org",
+    "email": "info.sji.ngo@gmail.com",
     "areaServed": { "@type": "Country", "name": "Armenia" },
     "address": { "@type": "PostalAddress", "addressCountry": "AM" },
     "knowsAbout": ["Gender justice", "Environmental justice", "Just transition", "Social resilience", "Policy advocacy"]
@@ -88,12 +90,8 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top">
-        <!-- TODO(logo): replace assets/img/logo.svg with the real SJI logo -->
-        <img class="brand-mark" src="assets/img/logo.svg" alt="" width="40" height="40">
-        <span class="brand-text">
-          <span class="brand-abbr">SJI</span>
-          <span class="brand-name" data-i18n="brand.name">Social Justice Innovations</span>
-        </span>
+        <img class="brand-logo" src="assets/img/logo.png" alt="SJI" width="510" height="298">
+        <span class="brand-name" data-i18n="brand.name">Social Justice Innovations</span>
       </a>
 
       <div class="header-controls">
@@ -304,10 +302,9 @@
 
           <div class="contact-direct">
             <p class="contact-label" data-i18n="contact.write">Write to us</p>
-            <!-- TODO(email): replace info@example.org here, in the JSON-LD above and in contact.php -->
-            <a class="contact-email" href="mailto:info@example.org">
+            <a class="contact-email" href="mailto:info.sji.ngo@gmail.com">
               <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
-              <span>info@example.org</span>
+              <span>info.sji.ngo@gmail.com</span>
             </a>
           </div>
         </div>
@@ -359,7 +356,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="assets/img/logo.svg" alt="" width="44" height="44" loading="lazy">
+        <img class="footer-logo" src="assets/img/logo.png" alt="" width="510" height="298" loading="lazy">
         <div>
           <p class="footer-name"><span data-i18n="brand.name">Social Justice Innovations</span> (SJI)</p>
           <p class="footer-tag" data-i18n="footer.tag">Non-profit public organization · Armenia</p>

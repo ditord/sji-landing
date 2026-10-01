@@ -24,10 +24,13 @@ $config = [
     // Set to false to switch the form off without removing it.
     'enabled'        => true,
 
-    // TODO(email): where messages are delivered.
-    'to'             => 'info@example.org',
+    // Where messages are delivered.
+    'to'             => 'info.sji.ngo@gmail.com',
 
-    // TODO(email): sender address — must be on your domain (e.g. no-reply@yourdomain.am).
+    // TODO(email): sender address. It must be on the website's own domain
+    // (e.g. no-reply@yourdomain.am), NOT a gmail.com address: mail sent from this
+    // server "as" gmail.com fails SPF/DKIM checks and lands in spam or is rejected.
+    // Replies still go to the visitor (Reply-To is set below).
     'from'           => 'no-reply@example.org',
     'from_name'      => 'SJI website',
 
