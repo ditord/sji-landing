@@ -11,7 +11,7 @@ assets/css/style.css    All styles; design tokens (colors, type, spacing) at the
 assets/js/i18n.js       EN + HY text dictionaries (every visible string)
 assets/js/main.js       Language switch, mobile nav, scroll reveal, form handling
 assets/img/             sji-logo.png (official logo, master file), logo.png,
-                        hero-illustration.svg, photo-placeholder.svg,
+                        cbd-women-logo.jpg (event logo in the hero), who-we-are.jpg (About illustration, AI-generated with Gemini),
                         og-image.svg/.png (social preview), apple-touch-icon.png,
                         icon-192.png, icon-512.png
 contact.php             OPTIONAL form handler (PHP mail()), config at the top
@@ -49,6 +49,8 @@ purple-600 on paper ≈ 8.6:1, ink-600 on paper ≈ 8.3:1, khaki-700 on paper �
 
 **Logo and icons.** The master file is `assets/img/sji-logo.png`. It has a transparent background, semi-transparent color blocks and black letters, so it is designed for white or light backgrounds. On dark areas, such as the footer, it sits on a white tile. If the logo changes, replace `sji-logo.png` and run `python3 tools/make-icons.py`, which needs Pillow. The script rebuilds `logo.png`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` and the manifest icons. Small favicons (16–48 px) use only the "sJi" part of the logo, because the full wordmark can't be read at that size. A vector (SVG) version of the logo would allow a sharper favicon and header logo, so ask the designer if one exists.
 
+**Hero event logo.** The hero's right column shows the CBD Women logo (`assets/img/cbd-women-logo.jpg`) on a white card. The card is needed because the JPEG has a white background and its green doesn't read on purple. It's shown whole, never cropped. The file is small (424 × 129 px after trimming), so ask for a larger PNG or an SVG version for sharper display on high-resolution screens. Its alt text is `hero.eventAlt` in `i18n.js`.
+
 **Images.** Replace the files in `assets/img/` and keep the same file names, or change the paths in `index.html`. If you edit `og-image.svg`, export it to PNG again: `rsvg-convert -w 1200 -h 630 assets/img/og-image.svg -o assets/img/og-image.png`. Social networks don't accept SVG for preview images.
 
 **Contact form.** The form is optional. To remove it, delete the `<form id="contact-form">…</form>` block in `index.html` and delete `contact.php`. The mailto link still works. The handler:
@@ -62,7 +64,6 @@ Nothing below was invented. Each item is a placeholder waiting for real informat
 
 | What | Where |
 |---|---|
-| **Photos**: the About section shows a labeled placeholder | `assets/img/photo-placeholder.svg`; also set `about.photoAlt` in `i18n.js` (EN + HY) to describe the real photo. Use only photos you have consent for |
 | **Form sender address**: `no-reply@example.org` | `contact.php` (`from`): use an address on the site's own domain, not Gmail |
 | **Social links**: none yet | Commented-out block in the footer of `index.html`; also add the URLs to the JSON-LD as `"sameAs": [...]` |
 | **Domain**: `https://www.example.org/` | `index.html` (canonical, `og:url`, `og:image`, `twitter:image`, JSON-LD `url`/`logo`), `robots.txt`, `sitemap.xml` |

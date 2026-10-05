@@ -34,12 +34,13 @@ window.SJI_I18N = {
     "hero.lede": "Social Justice Innovations (SJI) is a non-profit public organization led by women and working with women in climate-vulnerable communities.",
     "hero.cta": "Get involved",
     "hero.cta2": "See our approach",
+    "hero.eventAlt": "CBD Women logo",
 
     "about.eyebrow": "About us",
     "about.title": "Who we are",
     "about.p1": "Social Justice Innovations (SJI) is an Armenian women-led non-profit public organization established to advance social justice, dignity, inclusion and resilience.",
     "about.p2": "We do this through gender and green mainstreaming: bringing gender equality and environmental justice into the heart of social policy and community action.",
-    "about.photoAlt": "Placeholder image: photo to be added",
+    "about.photoAlt": "Line drawing of three raised fists, with pink watercolor flowers growing from one arm",
 
     "pillar.women.t": "Women-led",
     "pillar.women.d": "Led by women, working with women.",
@@ -145,12 +146,13 @@ window.SJI_I18N = {
     "hero.lede": "«Սոցիալական արդարության նորարարություններ» (SJI) շահույթ չհետապնդող հասարակական կազմակերպությունը ղեկավարում են կանայք, և այն աշխատում է կլիմայական ռիսկերի նկատմամբ խոցելի համայնքների կանանց հետ։",
     "hero.cta": "Միացեք մեզ",
     "hero.cta2": "Մեր մոտեցումը",
+    "hero.eventAlt": "CBD Women-ի տարբերանշանը",
 
     "about.eyebrow": "Մեր մասին",
     "about.title": "Ովքեր ենք մենք",
     "about.p1": "«Սոցիալական արդարության նորարարություններ» (SJI) կազմակերպությունը կանանց ղեկավարությամբ գործող հայաստանյան շահույթ չհետապնդող հասարակական կազմակերպություն է, որը ստեղծվել է սոցիալական արդարությունը, արժանապատվությունը, ներառականությունը և դիմակայունությունը առաջ մղելու նպատակով։",
     "about.p2": "Մենք դա անում ենք գենդերային և կանաչ մոտեցումների ներառման միջոցով՝ գենդերային հավասարությունն ու բնապահպանական արդարությունը դարձնելով սոցիալական քաղաքականության և համայնքային գործողությունների առանցքը։",
-    "about.photoAlt": "Տեղապահ պատկեր. լուսանկարը կավելացվի",
+    "about.photoAlt": "Երեք բարձրացված բռունցքների գծանկար՝ վարդագույն ջրաներկ ծաղիկներով, որոնք աճում են ձեռքերից մեկից",
 
     "pillar.women.t": "Կանանց ղեկավարությամբ",
     "pillar.women.d": "Մեզ ղեկավարում են կանայք, և մենք աշխատում ենք կանանց հետ։",
