@@ -4,9 +4,9 @@
   <defs><clipPath id="panel"><rect x="760" y="0" width="440" height="630"/></clipPath></defs>
   <rect width="1200" height="630" fill="#fbfaf6"/>
   <g clip-path="url(#panel)">
-    <rect x="760" y="0" width="440" height="630" fill="#d1c266"/>
-    <circle cx="980" cy="300" r="140" fill="#371a4d"/>
-    <g fill="none" stroke="#371a4d" stroke-width="2" opacity=".3"><circle cx="980" cy="300" r="195"/><circle cx="980" cy="300" r="250"/></g>
+    <rect x="760" y="0" width="440" height="630" fill="#4a206b"/>
+    <circle cx="980" cy="300" r="140" fill="#dee43c"/>
+    <g fill="none" stroke="#dee43c" stroke-width="2" opacity=".35"><circle cx="980" cy="300" r="195"/><circle cx="980" cy="300" r="250"/></g>
     <path d="M760 470c100-60 190-80 280-60s110 0 160-30v250H760Z" fill="#9b76b7"/>
     <path d="M760 540c110-35 210-35 300-10s100 10 140-5v105H760Z" fill="#aaa17c"/>
   </g>

@@ -23,7 +23,7 @@
   /* Gold accent: text ONLY on the dark purples (6.8:1 on purple-800, 8.2:1 on purple-900,
      9.8:1 on purple-950). On light backgrounds it's ~1.7:1, so use it there only for
      decoration (lines, frames, borders), never for text. */
-  --gold-400: #D1C266;   /* hero background; text on it is purple-900 (8.2:1) */
+  --gold-400: #D1C266;
 
   --khaki-700: #5c5230;   /* khaki text on light (7.4:1 on paper) */
   --khaki-500: #7c6e35;   /* logo khaki */
@@ -132,8 +132,7 @@ a:hover { text-decoration-thickness: 2px; }
   outline-offset: 3px;
   border-radius: 4px;
 }
-/* Hero is gold (light): dark aubergine outline instead of the default purple */
-.hero :focus-visible { outline-color: var(--purple-900); }
+.hero :focus-visible,
 .approach :focus-visible,
 .site-footer :focus-visible { outline-color: var(--focus-on-dark); }
 
@@ -202,16 +201,14 @@ main:focus { outline: none; }
   cursor: pointer;
   transition: background-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease), border-color 0.2s var(--ease);
 }
+.btn .icon { transition: transform 0.2s var(--ease); }
+.btn:hover .icon { transform: translateX(3px); }
 
 .btn--primary { background: var(--lime-400); color: var(--purple-950); }
 .btn--primary:hover { background: var(--lime-300); }
 
-.btn--ghost { border-color: var(--purple-900); color: var(--purple-900); }
-.btn--ghost:hover { background: rgb(55 26 77 / 0.08); }
-
-/* On the gold hero the yellow button would disappear (1.3:1), so it turns aubergine */
-.hero .btn--primary { background: var(--purple-900); color: var(--paper); }
-.hero .btn--primary:hover { background: var(--purple-600); }
+.btn--ghost { border-color: rgb(255 255 255 / 0.55); color: var(--white); }
+.btn--ghost:hover { border-color: var(--white); background: rgb(255 255 255 / 0.08); }
 
 .btn--block { width: 100%; }
 /* On white, give the yellow button a visible edge */
@@ -229,7 +226,8 @@ main:focus { outline: none; }
   color: var(--purple-600);
   font-size: var(--step--1);
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .eyebrow::before {
   content: "";
@@ -240,6 +238,9 @@ main:focus { outline: none; }
   background: var(--gold-400);
   border-radius: 2px;
 }
+:root:lang(hy) .eyebrow,
+:root:lang(hy) .step .step-label,
+:root:lang(hy) .contact-label { text-transform: none; letter-spacing: 0.01em; }
 .eyebrow--light { color: var(--gold-400); }
 
 .section { padding-block: var(--space-xl); }
@@ -458,17 +459,16 @@ main:focus { outline: none; }
 /* ==========================================================================
    Hero
    ========================================================================== */
-/* A flat gold field: the page's one bold element. Everything on it is
-   purple-900 (8.2:1), the logo yellow is never used on it (1.3:1). */
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--gold-400);
-  color: var(--purple-900);
+  background:
+    radial-gradient(60rem 40rem at 110% -10%, rgb(222 228 60 / 0.14), transparent 60%),
+    radial-gradient(40rem 30rem at -10% 120%, rgb(155 118 183 / 0.3), transparent 60%),
+    var(--purple-800);
+  color: var(--white);
   padding-block: clamp(3rem, 2rem + 5vw, 6.5rem);
 }
-.hero .eyebrow { color: var(--purple-900); }
-.hero .eyebrow::before { background: var(--purple-900); }
 .hero-inner {
   display: grid;
   gap: var(--space-l);
@@ -479,13 +479,13 @@ main:focus { outline: none; }
   font-weight: 500;
   letter-spacing: -0.01em;
   max-width: 22ch;
-  color: var(--purple-900);
+  color: var(--white);
 }
 :root:lang(hy) .hero-title { max-width: 30ch; letter-spacing: 0; }
 .hero-lede {
   max-width: 36rem;
   font-size: var(--step-1);
-  color: var(--purple-900);
+  color: var(--purple-100);
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: var(--space-m); }
 .hero-art { max-width: 26rem; margin-inline: auto; width: 100%; }
@@ -568,9 +568,21 @@ main:focus { outline: none; }
   background: var(--paper);
   border: 1px solid var(--khaki-200);
   border-radius: var(--radius);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
 }
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--gold-400); }
 .card h3 { color: var(--purple-800); margin-bottom: 0.4em; }
 .card p { color: var(--text-muted); }
+.card-num {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--khaki-200);
+  line-height: 1;
+}
 .card-icon {
   width: 2.75rem;
   height: 2.75rem;
@@ -620,7 +632,7 @@ main:focus { outline: none; }
   height: 3rem;
   margin-bottom: 1rem;
   border-radius: 50%;
-  background: var(--gold-400); /* echoes the hero */
+  background: var(--lime-400);
   color: var(--purple-950);
   font-family: "Fraunces", Georgia, serif;
   font-size: 1.35rem;
@@ -628,7 +640,15 @@ main:focus { outline: none; }
   position: relative;
   z-index: 1;
 }
- 
+.step .step-label {
+  margin-bottom: 0.35rem;
+  color: var(--gold-400);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 @media (min-width: 56em) {
   .steps { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   /* connecting line between step numbers */
@@ -639,7 +659,7 @@ main:focus { outline: none; }
     left: 3rem;
     right: 3rem;
     height: 2px;
-    background: repeating-linear-gradient(90deg, rgb(209 194 102 / 0.55) 0 8px, transparent 8px 16px);
+    background: repeating-linear-gradient(90deg, rgb(222 228 60 / 0.55) 0 8px, transparent 8px 16px);
   }
 }
 
@@ -710,6 +730,8 @@ main:focus { outline: none; }
   font-size: var(--step--1);
   font-weight: 600;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 .contact-email {
   display: inline-flex;
@@ -837,6 +859,7 @@ main:focus { outline: none; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .card:hover { transform: none; }
 }
 
 /* Windows High Contrast / forced colors */
